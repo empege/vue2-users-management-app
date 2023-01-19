@@ -5,7 +5,7 @@ import router from './router'
 export const bus = new Vue();
 
 Vue.filter('sliceText', function (value) {
-  return value.slice(100) + '...'
+  return `${value.slice(100)} ...`
 })
 
 new Vue({
