@@ -1,14 +1,15 @@
 @import "../assets/style/variables.scss";
 
 .weather-popup {
-  position: fixed;
-  right: 20px;
+  position: absolute;
+  right: 0px;
   top: 100px;
   background-color: $yellow;
   padding: 15px 30px 20px;
   border-radius: 5px;
   // border: 1px solid $gray;
   box-shadow: 0 0 6px 1px $gray;
+  width: max-content;
 
   &__close {
     text-align: right;

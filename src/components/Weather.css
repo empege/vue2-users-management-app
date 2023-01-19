@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 .weather-popup {
-  position: fixed;
-  right: 20px;
+  position: absolute;
+  right: 0px;
   top: 100px;
   background-color: #ffce30;
   padding: 15px 30px 20px;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 6px 1px #2c3e50;
           box-shadow: 0 0 6px 1px #2c3e50;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .weather-popup__close {

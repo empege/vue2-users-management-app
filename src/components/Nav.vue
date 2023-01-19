@@ -12,10 +12,12 @@
           <transition name="slide-up"><li class="nav__item"><router-link to="/companies">Companies</router-link></li></transition>
           <transition name="slide-up"><li class="nav__item"><router-link to="/newsletter">Newsletter</router-link></li></transition>
         </ul>
-        <span class="weather" @click="toggleWeatherPopup">Weather</span>
-        <keep-alive>
-          <component v-bind:is="this.showWeatherPopup && 'weather-popup'" v-on:closePopup="closePopup"></component>
-        </keep-alive>
+        <span class="weather" @click="toggleWeatherPopup">
+          Weather
+          <keep-alive>
+            <component v-bind:is="this.showWeatherPopup && 'weather-popup'" v-on:closePopup="closePopup"></component>
+          </keep-alive>
+        </span>
       </div>
     </nav>
   </div>
