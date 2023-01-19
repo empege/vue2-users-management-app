@@ -90,18 +90,23 @@ a {
 }
 
 .nav {
-  background-color: rgba($purple, 0.9);
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0 2px 4px $gray;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  backdrop-filter: blur(2px);
+  max-width: 1200px;
+  margin: 0 auto;
   // border-bottom: 1px solid $gray;
+
+  &__wrapper {
+    background-color: rgba($purple, 0.9);
+    box-shadow: 0 2px 4px $gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(2px);
+  }
 
   &__logo {
     width: 200px;
