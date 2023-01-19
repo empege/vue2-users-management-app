@@ -25,7 +25,7 @@ import Users from './components/Users.vue'
 import UserPage from './components/UserPage.vue'
 import Companies from './components/Companies.vue'
 import Posts from './components/Posts.vue'
-import Nav from './components/Nav.vue'
+import Nav from './components/Nav/Nav.vue'
 import {usersData} from './assets/data'
 import {companiesData} from './assets/data'
 
@@ -150,6 +150,9 @@ export default {
           user.company = {}
         }
       })
+    },
+    closePopup() {
+      this.showWeatherPopup = false
     }
   }
 }

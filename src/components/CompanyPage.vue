@@ -130,5 +130,5 @@ export default {
 </script>
 
 <style>
-  @import './AddEditPage.css';
+  @import './AddEditPage/AddEditPage.css';
 </style>

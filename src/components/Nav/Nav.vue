@@ -1,11 +1,19 @@
 <template>
   <div class="nav__wrapper">
     <nav class="nav">
-      <router-link to="/">
-          <div class="nav__logo">
-          <img src="https://clickup.com/images/schema_org/logo.png" alt="logo">
+      <div class="nav__logo-wrapper">
+        <div class="nav__logo">
+          <a href="https://www.ivanmitov.com">
+            <!-- <img class="nav__logo-img" src="../../assets/img/logoY2.png" alt="logo"> -->
+            <span class="ivan">Ivan</span>
+            <span class="mitov">Mitov</span>.com
+          </a> 
         </div>
-      </router-link>
+        <span>|</span>
+        <div class="nav__logo">
+          <a href="https://github.com/empege/vue2-users-management-app">View on Github</a> 
+        </div>
+      </div>
       <div class="nav__content">
         <ul class="nav__items">
           <transition name="slide-up"><li class="nav__item"><router-link to="/">Users</router-link></li></transition>
@@ -24,7 +32,7 @@
 </template>
 
 <script>
-import Weather from './Weather.vue'
+import Weather from '../Weather/Weather.vue'
 export default {
   name: 'Nav',
   components: {
@@ -40,12 +48,12 @@ export default {
       this.showWeatherPopup = this.showWeatherPopup ? false : 'weather-popup'
     },
     closePopup() {
-      this.showWeatherPopup = false
+      this.$emit('closePopup', false)
     }
   }
 }
 </script>
 
 <style>
-@import '../App.css';
+@import './Nav.css';
 </style>

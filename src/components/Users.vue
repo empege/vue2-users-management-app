@@ -65,5 +65,5 @@ export default {
 </script>
 
 <style>
-@import './List.css';
+@import './List/List.css';
 </style>

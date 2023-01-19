@@ -35,7 +35,8 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: $gray;
+  text-decoration: none;
 }
 
 .page {
@@ -86,110 +87,5 @@ a {
       background-color: $yellow-pale;
       color: $gray;
     }
-  }
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  font-weight: bold;
-  max-width: 1200px;
-  margin: 0 auto;
-  // border-bottom: 1px solid $gray;
-
-  &__wrapper {
-    background-color: rgba($purple, 0.9);
-    box-shadow: 0 2px 4px $gray;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    backdrop-filter: blur(2px);
-  }
-
-  &__logo {
-    width: 200px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &__content {
-    display: flex;
-    margin-right: 40px;
-  }
-
-  &__items {
-    display: flex;
-    align-items: center;
-  }
-
-  &__item {
-    position: relative;
-    margin: 0 10px;
-
-    .router-link-exact-active::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      bottom: -20px;
-      left: 0px;
-      background-color: $yellow;
-      position: absolute;
-      animation: slide-up 300ms;
-      transition: background-color 200ms;
-    }
-
-    a {
-      color: $yellow;
-      text-decoration: none;
-      padding: 20px 10px;
-      transition: color 200ms;
-    }
-  }
-
-  .nav__item:hover {
-    a {
-      color: $gray;
-      transition: color 300ms;
-    }
-    .router-link-exact-active::after {
-      background-color: $gray;
-      transition: background-color 300ms;
-    }
-  }
-}
-
-.weather {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  cursor: pointer;
-  position: relative;
-
-  &::after {
-    content: "Check";
-    font-size: 13px;
-    position: absolute;
-    bottom: 14px;
-    right: 0px;
-    background: $yellow;
-    opacity: 0.6;
-    border-radius: 3px;
-    padding: 1px 3px;
-  }
-}
-
-@keyframes slide-up {
-  0% {
-    bottom: -25px;
-  }
-  50% {
-    bottom: -17px;
-  }
-  100% {
-    bottom: -20px;
   }
 }
