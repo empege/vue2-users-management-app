@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.weather-popup {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  background-color: #ffce30;
+  padding: 15px 30px 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 6px 1px #2c3e50;
+          box-shadow: 0 0 6px 1px #2c3e50;
+}
+
+.weather-popup__close {
+  text-align: right;
+}
+
+.weather-popup__close button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0px;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.weather-popup__close button:hover {
+  opacity: 0.8;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.weather-popup h2,
+.weather-popup h3,
+.weather-popup h4,
+.weather-popup h5 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.weather-popup h2 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.weather-popup__min-max {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.weather-popup__description {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #2c3e50;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #2c3e50 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

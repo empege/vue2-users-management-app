@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.list {
+  min-height: 100vh;
+  max-width: 1200px;
+}
+
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+  border: 2px solid #2c3e50;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+  background-color: #fed661;
+}
+
+.list-item span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  border-right: 2px solid #2c3e50;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list-item span:last-child {
+  border-right: none;
+}
+
+.list-item--header {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 30px;
+  padding: 3px 8px;
+  background-color: #f9eabf;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list-item--header span {
+  border-right: none;
+}
+
+.list-item--post {
+  border: none;
+  padding: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 4px 1px #2c3e50;
+          box-shadow: 0 0 4px 1px #2c3e50;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.list-item--post:hover {
+  background-color: #2c3e50;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-box-shadow: 0 0 4px 1px #f9eabf;
+          box-shadow: 0 0 4px 1px #f9eabf;
+}
+
+.list-item--post span {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: auto;
+      flex-shrink: auto;
+  text-align: left;
+  /*flex: 0 0 auto; ovo je isto kao ova tri gore*/
+  border-right: none;
+  margin: 0;
+}
+
+.list-item--post a {
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 25px 20px 40px 20px;
+}
+
+.list-item--post a:hover {
+  color: whitesmoke;
+}
+
+.list-item__btn {
+  border: 2px solid #2c3e50;
+  padding: 3px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 3px;
+}
+
+.list-item__btn:hover {
+  background-color: rgba(116, 106, 176, 0.9);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  color: whitesmoke;
+  font-weight: bold;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
