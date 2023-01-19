@@ -109,7 +109,7 @@
 
     &:hover &-email {
       display: block;
-      animation: slide-up 300ms forwards;
+      animation: slide-up-edit 300ms forwards;
     }
   }
 
@@ -139,7 +139,7 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes slide-up-edit {
   0% {
     top: -20px;
   }
