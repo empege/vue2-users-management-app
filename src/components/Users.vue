@@ -27,6 +27,40 @@ import UserItem from './UserItem.vue'
 import ContentHeader from './ContentHeader.vue'
 // import {bus} from '../main'
 
+  console.log('moze li ovo');
+
+  const objeee = {
+    b: {aa:1},
+    z: 'b njoka',
+    c: ['c1', 'c2', 'c3'],
+    d: {
+      e: {
+        f: 'f njoka',
+        g: 123
+      }
+    }
+  }
+
+// Izvlaci poslednje samo ove koji nisu objekat. A za sta ce mu to tamo onda?
+  const flattenObject = (obj, res = {}) => {
+    for (const key of Object.keys(obj)) {
+      const propName = key
+      console.log('propName (key): ', propName)
+      console.log(Object.keys(obj))
+      if (typeof obj[key] === 'object') {
+        flattenObject(obj[key], res)
+      } else {
+        res[propName] = obj[key]
+      }
+    }
+    console.log('res: ', res)
+    return res
+  }
+  const newObj = flattenObject(objeee)
+  console.log('objeee: ', objeee)
+  console.log('newObj: ', newObj)
+
+
 export default {
   name: "Users",
   props: ['users', 'usersInCompany', 'companyId', 'companyLabel'],
