@@ -17,18 +17,18 @@
       <span></span>
     </section>
     <section class="list__list">
-      <company-item v-for="company in companies" v-bind:company="company" v-on:deleteCompany="deleteCompany($event)"/>
+      <company-item v-for="company in companies" v-bind:company="company"/>
     </section>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import CompanyItem from './CompanyItem.vue'
 import ContentHeader from './ContentHeader.vue'
 
 export default {
   name: "Companies",
-  props: ['companies'],
   components: {
     'company-item':CompanyItem,
     'content-header': ContentHeader
@@ -38,12 +38,13 @@ export default {
       page_title: this.$route.name
     }
   },
-  methods: {
-    busMethod() {
-    },
-    deleteCompany(company) {
-      this.$emit('deleteCompany', company)
-    }
+  computed: {
+    ...mapGetters([
+      'companies'
+    ])
+    // companies() {
+    //   return this.$store.getters.companies
+    // }
   }
 }
 </script>

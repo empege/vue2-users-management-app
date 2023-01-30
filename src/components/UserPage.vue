@@ -8,7 +8,6 @@
     </div>
     <div class="add-edit__form-wrapper">
       <form class="add-edit__form">
-        <!-- Ovde ce ti trebati v-model svuda -->
         <label for="firstName">
           <span>First name:</span>
           <span style="font-size: 12px; color: #2c3e50;">Lazy: {{user.firstName}}</span>
@@ -29,7 +28,7 @@
 
         <label for="company">
           <span>Company:</span>
-          <select v-model="user.company" v-on:change="showSelected">
+          <select v-model="user.company">
             <option disabled selected="selected" v-bind:value="0">Choose a company: </option>
             <option v-for="company in companies" v-bind:value="{label:company.label, id:company.id}">{{company.label}}</option>
           </select>
@@ -49,7 +48,7 @@
 
         <label for="position">
           <span>Position:</span>
-          <select v-model="user.position" v-on:change="showSelected">
+          <select v-model="user.position">
             <option disabled selected="selected" v-bind:value="0">Choose a position: </option>
             <option v-for="position in positions" v-bind:value="{label:position.label, id:position.id}">{{position.label}}</option>
           </select>
@@ -74,13 +73,10 @@
 
 <script>
 import ContentHeader from './ContentHeader.vue';
-import {bus} from '../main'
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
-import util from '../assets/utils/generateId.js'
 
 export default {
-  props: ['users', 'companies'],
   components: {
     'content-header': ContentHeader,
     DatePicker
@@ -152,15 +148,12 @@ export default {
     },
     addUser() {
       if(!this.shouldSubmit.includes(false)){
-        const userId = this.generateNewUserId()
-        const newUser = {...this.user, id: userId}
-        this.$emit('addUser', newUser)
+        this.$store.commit('addUser', this.user)
       }
     },
     editUser() {
       if(!this.shouldSubmit.includes(false)){
-        const editedUser = {...this.user}
-        this.$emit('editUser', editedUser)
+        this.$store.commit('editUser', this.user)
       }
     },
     validateUserNumber(e) {
@@ -168,14 +161,9 @@ export default {
         this.user.number = this.user.number.slice(0, this.user.number.length-1)
       }
       this.$forceUpdate()
-    },
-    showSelected(e) {
-      console.log(e.target)
     }
   },
   created() {
-    // console.log('Created')
-    this.generateNewUserId = util.generateId
     if(this.$route.params.id) {
       const selectedUser = this.users.find(currentUser => currentUser.id === this.$route.params.id)
       this.user.id = selectedUser.id
@@ -190,6 +178,14 @@ export default {
       // Preselected company when adding user from company edit page
       console.log(JSON.parse(JSON.stringify({id: this.$route.query.companyId, label: this.$route.query.companyLabel})))
       this.user.company = JSON.parse(JSON.stringify({id: this.$route.query.companyId, label: this.$route.query.companyLabel}))
+    }
+  },
+  computed: {
+    users() {
+      return this.$store.state.users
+    },
+    companies() {
+      return this.$store.state.companies
     }
   }
 }

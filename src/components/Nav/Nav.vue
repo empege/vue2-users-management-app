@@ -4,7 +4,6 @@
       <div class="nav__logo-wrapper">
         <div class="nav__logo">
           <a href="https://www.ivanmitov.com">
-            <!-- <img class="nav__logo-img" src="../../assets/img/logoY2.png" alt="logo"> -->
             <span class="ivan">Ivan</span>
             <span class="mitov">Mitov</span>.com
           </a> 

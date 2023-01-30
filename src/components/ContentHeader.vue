@@ -14,12 +14,6 @@
 export default {
   name: 'ContentHeader',
   props: ['additional_btn_url', 'additional_btn_label', 'callback'],
-  // props: {
-  //   receivedPropVar: {
-  //     type: String, // Kao neki PropTypes
-  //     required: true // Ako ga nema, izbaci gresku
-  //   }
-  // }
   data () {
     return {
       page_title: this.$route.name

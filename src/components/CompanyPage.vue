@@ -36,9 +36,7 @@
       </form>
       <div v-if="this.page_id" class="add-edit__users-wrapper">
         <users
-          v-bind:users=" this.company.users"
           v-bind:usersInCompany="true"
-          v-on:deleteUser="deleteUser($event)"
           v-bind:companyId="this.company.id"
           v-bind:companyLabel="this.company.label"
           ></users>
@@ -50,10 +48,8 @@
 <script>
 import ContentHeader from './ContentHeader.vue';
 import Users from './Users.vue'
-import util from '../assets/utils/generateId.js'
 
 export default {
-  props: ['users', 'companies'],
   components: {
     'content-header': ContentHeader,
     'users': Users
@@ -99,24 +95,20 @@ export default {
     },
     addCompany() {
       if(!this.shouldSubmit.includes(false)){
-        const companyId = this.generateNewUserId()
-        const newCompany = {...this.company, id: companyId}
-        this.$emit('addCompany', newCompany)
+        this.$store.commit('addCompany', this.company)
       }
     },
     editCompany() {
       if(!this.shouldSubmit.includes(false)){
         const editedCompany = {...this.company}
-        this.$emit('editCompany', editedCompany)
+        this.$store.commit('editCompany', editedCompany)
       }
     },
     deleteUser(user) {
-      this.$emit('deleteUser', user)
+      this.$store.commit('deleteUser', user)
     }
   },
   created() {
-    console.log('Created')
-    this.generateNewUserId = util.generateId
     if(this.page_id) {
       const selectedCompany = this.companies.find(currentCompany => currentCompany.id === this.page_id)
       this.company.id = selectedCompany.id
@@ -124,6 +116,14 @@ export default {
       this.company.city = selectedCompany.city
       this.company.country = selectedCompany.country
       this.company.users = selectedCompany.users
+    }
+  },
+  computed: {
+    users() {
+      return this.$store.state.users
+    },
+    companies() {
+      return this.$store.state.companies
     }
   }
 }

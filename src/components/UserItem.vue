@@ -21,10 +21,8 @@ export default {
   },
   methods: {
     deleteUser() {
-      console.log('Delete user')
-      console.log(this.user)
-      this.$emit('deleteUser', this.user)
-    }
+      this.$store.commit('deleteUser', this.user)
+    },
   }
 }
 </script>

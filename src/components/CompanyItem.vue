@@ -21,9 +21,7 @@ export default {
   },
   methods: {
     deleteCompany() {
-      console.log('Delete company')
-      console.log(this.company)
-      this.$emit('deleteCompany', this.company)
+      this.$store.commit('deleteCompany', this.company)
     }
   }
 }
