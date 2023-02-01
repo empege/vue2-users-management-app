@@ -4,6 +4,17 @@
   max-width: 1200px;
 }
 
+.list__scroll-trigger {
+  width: 30px;
+  height: 30px;
+  background-color: #fed661;
+  border-radius: 50%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 4px 1px #2c3e50;
+          box-shadow: 0 0 4px 1px #2c3e50;
+  margin-bottom: 400px;
+}
+
 .list-item {
   display: -webkit-box;
   display: -ms-flexbox;
